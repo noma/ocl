@@ -8,7 +8,6 @@
 
 #include <noma/typa/typa.hpp>
 
-#include "common.hpp"
 #include "debug.hpp"
 #include "noma/ocl/config_error.hpp"
 
