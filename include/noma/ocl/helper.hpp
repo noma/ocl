@@ -9,7 +9,6 @@
 
 #include <CL/cl.hpp>
 
-#include "common.hpp"
 #include "memory.hpp"
 #include "noma/ocl/config.hpp"
 
