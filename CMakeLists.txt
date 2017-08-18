@@ -6,6 +6,10 @@ cmake_minimum_required(VERSION 3.1 FATAL_ERROR)
 
 project(libnoma_ocl LANGUAGES CXX)
 
+list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/")
+include(CreateOpenCLKernelHeader)
+message("CMAKE_MODULE_PATH: " ${CMAKE_MODULE_PATH})
+
 set(NOMA_OCL_THIRDPARTY_DIR ${PROJECT_SOURCE_DIR}/thirdparty)
 
 #set(CMAKE_CXX_STANDARD 11)
