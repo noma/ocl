@@ -9,7 +9,7 @@
 
 #include <CL/cl.hpp>
 
-#include "memory.hpp"
+#include "noma/memory/memory.hpp"
 #include "noma/ocl/config.hpp"
 
 namespace noma {

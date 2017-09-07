@@ -23,13 +23,13 @@ set(OpenCL_INCLUDE_DIRS ${NOMA_OCL_THIRDPARTY_DIR}/include)
 
 # TODO: write CMake module for code handling, move thirdparty module into this subproject
 
-# header only library 
+# static library
 add_library(noma_ocl STATIC src/noma/ocl/config.cpp src/noma/ocl/device_type_list.cpp src/noma/ocl/helper src/noma/ocl/kernel_wrapper.cpp)
 
 # NOTE: we want to use '#include "noma/ocl/ocl.hpp"', not '#include "ocl.hpp"'
 target_include_directories(noma_ocl PUBLIC include ${OpenCL_INCLUDE_DIRS})
 
-target_link_libraries(noma_ocl noma_bmt noma_typa ${OpenCL_LIBRARIES})
+target_link_libraries(noma_ocl noma_bmt noma_typa noma_memory ${OpenCL_LIBRARIES})
 
 set_target_properties(noma_ocl PROPERTIES
     CXX_STANDARD 11

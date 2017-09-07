@@ -8,7 +8,6 @@
 #include <iostream>
 
 #include "debug.hpp"
-#include "memory.hpp"
 #include "noma/ocl/config_error.hpp"
 
 namespace noma {
