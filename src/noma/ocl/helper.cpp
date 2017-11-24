@@ -125,7 +125,7 @@ cl_ulong helper::run_kernel_timed(cl::Kernel& kernel, nd_range range)
 	cl_ulong t_end = 0;
 
 	// execute kernel
-	queue_.enqueueNDRangeKernel(kernel, range.offset, range.global, range.local, nullptr, &event);
+	err = queue_.enqueueNDRangeKernel(kernel, range.offset, range.global, range.local, nullptr, &event);
 	error_handler(err, "ocl.queue().enqueueNDRangeKernel()");
 	err = cl::Event::waitForEvents({event}); // NOTE: C++11 initialisation for an expected vector of events here
 	error_handler(err, "cl::Event::waitForEvents()");
