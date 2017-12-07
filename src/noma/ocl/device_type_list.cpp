@@ -47,7 +47,7 @@ std::istream& operator>>(std::istream& in, device_type_list& t)
 	for (auto& name : cl_device_type_names) {
 		if (!name_exp_str.empty())
 			name_exp_str += "|";
-		name_exp_str += name.second;
+		name_exp_str += "\\b" + name.second + "\\b"; // NOTE: "\\b" is an '\b' regex assertion for a word boundary
 	}
 	name_exp_str = "(?:" + name_exp_str + ")";
 
