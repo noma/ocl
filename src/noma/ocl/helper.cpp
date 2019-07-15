@@ -98,6 +98,11 @@ cl::Program helper::create_program(const char* source, size_t length, const std:
 	std::string complete_compile_options = config_.opencl_compile_options() + " " + compile_options;
 
 	DEBUG_ONLY( std::cout << "OpenCL: Building kernel with options: \"" << complete_compile_options << "\"" << std::endl; )
+	DEBUG_ONLY( std::cout << "OpenCL: Building kernel source: " << std::endl
+	                      << "---------- BEGIN SRC ----------" << std::endl
+	                      << source << std::endl
+	                      << "----------- END SRC -----------" << std::endl; )
+
 	err = prog.build(devices_, complete_compile_options.c_str());
 	error_handler(err, "cl::Program::build()", false); // do not terminate, as we want the build log
 	cl_int build_err = err;
